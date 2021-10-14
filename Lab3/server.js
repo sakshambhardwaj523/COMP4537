@@ -1,7 +1,7 @@
 let http = require('http');
 let url = require('url');
 
-let date = require('../modules/utils')
+let date = require('./modules/utils')
 
 http.createServer((req, res)=> {
     let q = url.parse(req.url, true);

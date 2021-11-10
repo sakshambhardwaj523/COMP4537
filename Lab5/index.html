@@ -4,37 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>readDB</title>
+    <title>Document</title>
 </head>
 <body>
-
-    <div>
-        <p id = "display"></p>
-    </div>
-
+    
 </body>
 </html>
-<script>
-    const xhttp = new XMLHttpRequest();
-    const endPointRoot = "https://comp4537-lab-5.com/nodemysql/";
-    function getData() {
-        const url = endPointRoot;
-        xhttp.open("GET", url , true);
-        xhttp.send();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 & this.status == 200) {
-                const obj = JSON.parse(this.responseText);
-                console.log(obj);
-
-                for (let i = 0; i < obj.length; i++) {
-                    let results = obj[i].name + ":" + obj[i].score + '<br>'
-                    document.getElementById('display').innerHTML += results;
-                    
-                };
-
-            }
-        }
-       
-    };
-    window.onload = getData;
-</script>
